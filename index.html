@@ -28,7 +28,9 @@ body {
   }
  
 #main {background:black; width:100%; height:100vh; position:relative; transition: background 2s; opacity:0.8;}
-.shabat {color:#FFFFFF; position:absolute; left:50%; margin-left:-230px; font-size:7em; top:50%; margin-top:-320px;}
+.shabat {color:#FFFFFF; position:absolute; left:20px; top:10px; font-size:20px; display:none; opacity:0.8}
+.maly {color:#FFFFFF; position:absolute; left:20px; bottom:10px; font-size:20px; display:none; opacity:0.8}
+
 .rain {width:2px; height:6px; background:grey; transform:rotate(10deg); position:absolute; top:0; left:100px;
     -webkit-animation-name: spin;
     -webkit-animation-duration: 4000ms;
@@ -55,8 +57,9 @@ body {
 </div>
 <div id="wrap">
 <div id="main">
-
-<!--<div id="metal"></div>-->
+<div class="shabat">Made By Yuri Blecher 2016</div>
+<div class="maly">♥ MALY ♥
+</div><!--<div id="metal"></div>-->
 </div>
 </div>
 
@@ -97,6 +100,30 @@ var main = document.getElementById("main");
 main.setAttribute("style","background:black");	
 
 }
+
+function showAuth() {
+$(".shabat").fadeIn(2000);
+	
+}
+
+function hideAuth() {
+$(".shabat").fadeOut(2000);	
+}
+
+function showMaly() {
+$(".maly").fadeIn(2000);
+	
+}
+
+function hideMaly() {
+$(".maly").fadeOut(2000);	
+}
+
+setTimeout(function(){showAuth()},2000);
+setTimeout(function(){hideAuth()},6000);
+
+setTimeout(function(){showMaly()},7000);
+setTimeout(function(){hideMaly()},10000);
 
 setInterval(function(){light()},randomRange(5000,10000));
 
